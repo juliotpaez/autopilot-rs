@@ -631,7 +631,7 @@ fn macos_load_cgimage(image: &CGImage) -> ImageResult<Bitmap> {
         size: CGSize::new(width as CGFloat, height as CGFloat),
     };
 
-    context.draw_image(rect, &image);
+    context.draw_image(rect, image);
 
     let buffer: &[u8] = context.data();
     let mut dynimage = DynamicImage::new_rgb8(width as u32, height as u32);
